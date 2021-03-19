@@ -1,0 +1,9 @@
+<div class = "jumbotrom text-center">
+    <button class="btn btn-success btn-lg" (click)="ramdomsDices()">Roll the dices</button>
+    <br>
+    <img class="img" [src]="leftDice">
+    <img class="img" [src]="rightDice">
+    <h1 *ngIf="numberDice1 == numberDice2">
+      <apan class="badge btn-success"> You Win! </apan>
+    </h1>
+</div>

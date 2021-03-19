@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-lg-4 offset-lg-4">
+    <h2 class="title">
+      BMI Calculator
+    </h2>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <div class="fondItem" [ngClass]="{ 'sexDisable': sex === 'Female'}">
+          <div class="container" style="cursor: pointer;" (click) = male()>
+            <i class="fa fa-mars sex" aria-hidden="true"></i>
+            <p> Male </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="fondItem" [ngClass]="{ 'sexDisable': sex === 'Male'}">
+          <div class="container" style="cursor: pointer;"  (click) = female()>
+            <i class="fa fa-venus sex" aria-hidden="true"></i>
+            <p> Female </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-12">
+        <div class="fondItem">
+          <div class="container">
+            <p> Height </p>
+            <div class="styleNumber"> {{ height }}
+              <span class="cm"> cm </span>
+            </div>
+            <input type="range" (input)="changeHeight($event)" [value] = "height" min="120" max = "220" class="form-range" id="customRange1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <div class="fondItem">
+          <div class="container">
+            <p>Weight</p>
+            <div class="styleNumber">{{ weight }}</div>
+            <div>
+              <i class="fa fa-minus sumSust" aria-hidden="true" (click) = "weight = weight - 1"></i>
+              <i class="fa fa-plus sumSust" aria-hidden="true" (click) = "weight = weight + 1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="fondItem">
+          <div class="container">
+            <p>Age</p>
+            <div class="styleNumber">{{ age }}</div>
+            <div>
+              <i class="fa fa-minus sumSust" aria-hidden="true" (click) = "age = age - 1"></i>
+              <i class="fa fa-plus sumSust" aria-hidden="true" (click) = "age = age + 1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-12">
+        <button (click)="calculateBMI()" class="btn btn-primary btn-lg btn-block btn-color">
+          Calculate
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
